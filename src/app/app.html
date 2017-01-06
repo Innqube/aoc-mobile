@@ -1,14 +1,9 @@
 <ion-menu [content]="mycontent">
-  <ion-content>
-    <ion-list>
-      <button ion-item>El evento</button>
-      <button ion-item>Programa</button>
-      <button ion-item>Keynotes</button>
-      <button ion-item>Sponsors</button>
-      <button ion-item>Kudos</button>
-      <button ion-item>Sobre esta aplicación</button>
-    </ion-list>
-  </ion-content>
+    <ion-content>
+        <ion-list>
+            <button ion-item menuClose *ngFor="let mi of menuItems" (click)="openPage(mi)">{{mi.label}}</button>
+        </ion-list>
+    </ion-content>
 </ion-menu>
 
-<ion-nav #mycontent [root]="rootPage"></ion-nav>
+<ion-nav #mycontent [root]="eventoPage"></ion-nav>
